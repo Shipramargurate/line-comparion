@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class LineComparion {
 
-	/*
-	 * UC2 
-	 */
-	public static double equalityOfLength() { 
+	public static double lengthOfLine1, lengthOfLine2;
+	static int result;
+	
+	public double equalityOfLength() { 
 		
 		Scanner line = new Scanner(System.in);
 		
@@ -27,29 +27,28 @@ public class LineComparion {
 		return length;
 	}
 	public static void main(String[] args) {
-		Double lengthOfLine1 = equalityOfLength();
+		
+		LineComparion line = new  LineComparion();
+		Double lengthOfLine1 = line.equalityOfLength();
 		
 		System.out.println("length of line 1:" + lengthOfLine1);
 		
-		Double lengthOfLine2 = equalityOfLength();
+		Double lengthOfLine2 = line.equalityOfLength();
 		
 		System.out.println("lenth of line 2:" + lengthOfLine2);
 		
-		if(lengthOfLine1.equals(lengthOfLine2)) {
-			System.out.println("both lines are equal");
+		System.out.println("euqal::" + lengthOfLine1.equals(lengthOfLine2));
+		result = Double.compare(lengthOfLine1, lengthOfLine2);
+			if(result < 0 ) {
+				System.out.println(  lengthOfLine1 + " is lesser than"  + lengthOfLine2);
 			}
 			else {
-			System.out.println("Both lines are not equal");
-			}
-			/*
-			 * UC3	comparing 2 lines
-			 */
-		if(lengthOfLine1.compareTo(lengthOfLine2) < 0 ) {
-			System.out.println(  lengthOfLine1 +" is lesser than" + lengthOfLine2);
+				System.out.println(lengthOfLine1 + "is greater than "  + lengthOfLine2);
 		}
-		else {
-			System.out.println(lengthOfLine1 + " is greater than"  + lengthOfLine2);
-		}
-	}
-}
+		
+			
+	
 
+}
+}
+		  
